@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.md.openxcapp.MirroredConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_grey_900"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:weightSum="100"
+    tools:context="com.md.openxcapp.MainActivity">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/speedCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtVehicleSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="136sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="km/sa"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Harcanan Yakıt (L)"
+                        android:textColor="@color/md_blue_grey_50" />
+
+                    <TextView
+                        android:id="@+id/tv_fuel_consumed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3.2"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/md_light_blue_A100"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ortalama Tüketim (L / 100 Km)"
+                        android:textColor="@color/md_blue_grey_50"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_average_fuel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5.4"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/md_light_green_200"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fuelCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        android:visibility="gone"
+        gauge:layout_constraintLeft_toLeftOf="parent"
+        gauge:layout_constraintRight_toRightOf="parent"
+        gauge:layout_constraintTop_toBottomOf="@id/speedCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#000000"
+            android:orientation="horizontal"
+            android:weightSum="12">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                gauge:srcCompat="@drawable/fuel" />
+
+            <com.app.progresviews.ProgressLine
+                android:id="@+id/fuel_progress"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                app:definition="Yakıt durumu"
+                app:lineBarWidth="7dp"
+                app:lineProgressColor="#43bd9f"
+                app:underLineColor="@android:color/white"
+                app:value="50.9%"
+                app:valueDefTextSize="20sp"
+                app:valuePercentage="70" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/hudButtonCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fuelCard"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="154dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imgHeadUp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:visibility="visible"
+                gauge:srcCompat="@drawable/headup" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        gauge:layout_constraintLeft_toLeftOf="parent"
+        gauge:layout_constraintRight_toRightOf="parent"
+        gauge:layout_constraintTop_toBottomOf="@id/fuelCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/txtNotificationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Lorem ipsum dolor sit amet lorem ipsum dolor sit amet"
+                android:textColor="@color/md_cyan_100"
+                android:textSize="32sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</com.md.openxcapp.MirroredConstraintLayout>

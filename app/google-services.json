@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "837017406938",
+    "firebase_url": "https://openxc-c03d5.firebaseio.com",
+    "project_id": "openxc-c03d5",
+    "storage_bucket": "openxc-c03d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837017406938:android:15a0a4acc4e246d7",
+        "android_client_info": {
+          "package_name": "com.md.openxcapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837017406938-qg9ih5opk5ikl93eeoidinl5jjiocsif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn6YbfDRyqcxEAx7Rs6qwMs9mn1_uI6vA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
